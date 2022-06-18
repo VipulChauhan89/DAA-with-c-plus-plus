@@ -30,7 +30,7 @@ class Graph
                 return;
             }
             print_path(parent[j]);
-            cout<<j<<"->";
+            cout<<j<<" ";
         }
         void dijkstra_shortest_path(int src)
         {
@@ -59,9 +59,9 @@ class Graph
             }
             for(int i=0;i<this->V;i++)
             {
-                cout<<src<<"->";
+                cout<<src<<" ";
                 print_path(i);
-                cout<<" distance = "<<dist[i]<<endl;
+                cout<<" : "<<dist[i]<<endl;
             }
         }
 };
