@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int maxDivide(int a,int b)
+{
+	while(a%b==0)
+		a=a/b;	
+	return a;
+}
+int isUgly(int no)
+{
+	no=maxDivide(no,2);
+	no=maxDivide(no,3);
+	no=maxDivide(no,5);
+
+	return (no==1)?1:0;
+}
+int getNthUglyNo(int n)
+{
+	int i=1;
+	int count=1;
+	while (n > count)
+	{
+		i++;
+		if(isUgly(i))
+			count++;
+	}
+	return i;
+}
+int main()
+{
+    int T,N;
+    cin>>T;
+    while(T--)
+    {
+        cin>>N;
+        unsigned long long int ans=getNthUglyNo(N);
+	    cout<<N<<"-th Ugly number : "<<ans<<endl;
+    }
+	return 0;
+}
